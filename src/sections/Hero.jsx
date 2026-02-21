@@ -1,67 +1,98 @@
-import React from 'react'
-import Button from '@/components/Button'
-import { ArrowRight } from 'lucide-react'
+import React, { useMemo } from "react";
+import Button from "@/components/Button";
+import { Github, Linkedin, Youtube } from "lucide-react";
+import FixedButton from "../components/DownloadButton";
 const Hero = () => {
+  const dots = useMemo(() => {
+    return [...Array(30)].map(() => ({
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      duration: `${15 + Math.random() * 20}s`,
+      delay: `${Math.random() * 5}s`,
+    }));
+  }, []);
   return (
-    <section className='relative min-h-screen flex items-center overflow-hidden'>
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
-      <div className='absolute inset-0'>
-        <img src='/hero-bg.jpg' alt='Hero Image' className='w-full h-full object-cover opacity-40'/>
-      <div className='absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background'/>
+      <div className="absolute inset-0">
+        <img
+          src="/hero-bg.jpg"
+          alt="Hero Image"
+          className="w-full h-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background" />
       </div>
       {/* Green Dots */}
-      <di className='absolute inset-0 overflow-hidden pointer-events-none'>
-        {[...Array(30)].map((_,i)=>(
-          <div className='absolute w-1.5 h-1.5 rounded-full opacity-60' style={{
-            backgroundColor:"#20B2A6",
-            left:`${Math.random() * 100}%`,
-            top:`${Math.random() * 100}%`,
-            animation: `slow-drift ${15+Math.random()*20}s ease-in-out infinite`,
-            animationDelay:`${Math.random()*5}s`
-          }}></div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {dots.map((dot, i) => (
+          <div
+            key={i}
+            className="absolute w-1.5 h-1.5 rounded-full opacity-60"
+            style={{
+              backgroundColor: "#20B2A6",
+              left: dot.left,
+              top: dot.top,
+              animation: `slow-drift ${dot.duration} ease-in-out infinite`,
+              animationDelay: dot.delay,
+            }}
+          ></div>
         ))}
-      </di>
+      </div>
 
       {/* Content */}
-      <div className='container mx-auto px-6 pt-32 pb-20 relative z-10'>
-        <div className='grid lg:grid-cols-2 gap-12'>
-          {/* Left Column */}
-          <div className='space-y-8'>
-            <div className='animate-fade-in'>
-              <span className='inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary'>
-              <span className='w-2 h-2 bg-primary rounded-full animate-pulse'/>
-              Software Engineer - Full Stack Developer
-              </span>
-            </div>
-
-            {/* Headline */}
-            <div className='space-y-4'> 
-              <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100'>
-                Crafting <span className='text-primary glow-text'>digital</span>
-                <br />
-                experience with
-                <br />
-                <span className='font-serif italic font-normal text-white'>
-                  percision.
-                </span>
-              </h1>
-              <p className='text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam cumque nobis maiores! Iusto fuga sunt culpa nulla inventore, facilis pariatur accusantium, ratione obcaecati voluptates molestias, minima cumque natus. Reprehenderit, quidem.
-              </p>
-            </div>
-            {/* CTA */}
-            <div>
-              <Button size="lg">Contact Me <ArrowRight className='w-5 h-5'/></Button>
-               {/* <Button size="lg">Download Resume <ArrowRight className='w-5 h-5'/></Button> */}
-            </div>
-  
+      <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
+        <div className="flex flex-col items-center text-center space-y-8">
+          {/* Badge */}
+          <div className="animate-fade-in">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
+              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              Engineer Building End-to-End Systems
+            </span>
           </div>
-          {/* Right Column */}
 
+          {/* Headline */}
+          <div className="space-y-4 max-w-4xl text-center"></div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold animate-fade-in animation-delay-100">
+            Hi, I’m <span className="glow-text text-primary">Aruna</span>{" "}
+            Subramanian
+          </h1>
+          <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto animate-fade-in animation-delay-200">
+            Software engineer focused on creating clean, efficient applications
+            from interface to infrastructure. Constantly exploring new
+            challenges and deepening my expertise to deliver better solutions
+            every day.
+          </p>
+          {/* Resume Button */}
+          <div className="animate-fade-in animation-delay-300">
+            <FixedButton />
+          </div>
+          {/* Social Links */}
+          <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+            <span className="text-sm text-muted-foreground">
+              Connect with me:
+            </span>
+            {[
+              {
+                icon: Linkedin,
+                href: "https://www.linkedin.com/in/aruna-subramanian/",
+              },
+              { icon: Github, href: "https://github.com/Aruna456" },
+              { icon: Youtube, href: "https://www.youtube.com/@aheduworks" },
+            ].map((social, index) => (
+              <a
+                key={index}
+                href={social.href}
+                target="_blank"
+                className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+              >
+                {<social.icon className="w-5 h-5" />}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
