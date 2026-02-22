@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import Button from "@/components/Button";
-import { Github, Linkedin, Youtube } from "lucide-react";
+import { ChevronDown, Github, Linkedin, Youtube } from "lucide-react";
 import FixedButton from "../components/DownloadButton";
 const Hero = () => {
   const dots = useMemo(() => {
@@ -89,6 +89,16 @@ const Hero = () => {
               </a>
             ))}
           </div>
+        </div>
+        {/* Scroll Button */}
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
+          <a
+            href="#about"
+            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary"
+          >
+            <span className="text-xs uppercase tracking-wider">Scroll</span>
+            <ChevronDown className="w-6 h-6 animate-bounce" />
+          </a>
         </div>
       </div>
     </section>

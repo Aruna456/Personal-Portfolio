@@ -47,12 +47,33 @@
   .glass-strong {
     background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
     backdrop-filter: blur(24px);
-    border: 1px solid color-mix(in srgb, var(--color-surface) 80%, transparent);
+    /* border: 1px solid color-mix(in srgb, var(--color-surface) 80%, transparent); */
+    -webkit-backdrop-filter: blur(12px);
   }
 
   .glow-text {
     text-shadow: 0 0 30px
       color-mix(in srgb, var(--color-primary) 50%, transparent);
+  }
+
+  .glow-border {
+    position: relative;
+  }
+
+  .glow-border::before {
+    content: "";
+    position: absolute;
+    inset: -1px; /* border thickness */
+    border-radius: inherit;
+    background: linear-gradient(
+      120deg,
+      rgba(32, 178, 166, 0),
+      rgba(32, 178, 166, 0.6),
+      rgba(32, 178, 166, 0)
+    );
+    filter: blur(6px);
+    opacity: 0.8;
+    z-index: -1;
   }
 }
 
