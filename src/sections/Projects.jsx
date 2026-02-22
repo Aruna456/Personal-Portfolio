@@ -42,7 +42,7 @@ const Projects = () => {
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            These are some projects I’ve built as part of my work and learning.
+            These are some projects I’ve built as part of my work and learning
             .Each reflects the kind of work I've been doing and learning along
             the way
           </p>
