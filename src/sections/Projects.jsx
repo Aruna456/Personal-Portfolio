@@ -6,20 +6,20 @@ const projects = [
   {
     title: "Invoice Billing System",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
-    image: "projects/Invoice.jpg",
-    tags: ["React", "NodeJS"],
+      "A web-based invoice billing system built for a small business to manage customers, generate invoices, and track billing records. I worked on both the frontend and backend, focusing on clear workflows, reliable data handling, and simple usability for day-to-day use.",
+    image: "/hero-bg.jpg",
+    tags: ["React", "Node.js", "Express", "MongoDB"],
     link: "#",
-    github: "#",
+    github: "https://github.com/Aruna456/",
   },
   {
-    title: "Portfolio",
+    title: "Personal Portfolio for a Video Editor",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
-    image: "projects/portfolio.jpg",
-    tags: ["React", "NodeJS"],
+      "A portfolio website built for a video editor to showcase work, highlight services, and make it easy for clients to get in touch. The focus was on clean layout, responsiveness, and straightforward content structure rather than heavy visuals or effects.",
+    image: "/hero-bg.jpg",
+    tags: ["React", "Tailwind CSS"],
     link: "#",
-    github: "#",
+    github: "https://github.com/Aruna456/",
   },
 ];
 const Projects = () => {
@@ -34,7 +34,7 @@ const Projects = () => {
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in ">
             Featured Works
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animate-dealy-100">
+          <h2 className="text-4xl text-secondary-foreground  md:text-5xl font-bold mt-4 mb-6 animate-fade-in animate-delay-100">
             Projects I've
             <span className="text-white font-serif font-normal">
               {" "}
@@ -42,8 +42,9 @@ const Projects = () => {
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            These are small, focused projects that I built. Each reflects the
-            kind of work I've been doing and learning along the way
+            These are some projects I’ve built as part of my work and learning.
+            .Each reflects the kind of work I've been doing and learning along
+            the way
           </p>
         </div>
         {/* Projects Grid */}

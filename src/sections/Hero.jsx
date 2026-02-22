@@ -57,10 +57,10 @@ const Hero = () => {
             Subramanian
           </h1>
           <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto animate-fade-in animation-delay-200">
-            Software engineer focused on creating clean, efficient applications
-            from interface to infrastructure. Constantly exploring new
-            challenges and deepening my expertise to deliver better solutions
-            every day.
+            Software engineer building practical applications with a focus on
+            thoughtful implementation and end-to-end ownership. I care about how
+            things are built, how they’re used, and how they hold up over clean
+            interfaces with reliable backend logic.
           </p>
           {/* Resume Button */}
           <div className="animate-fade-in animation-delay-300">

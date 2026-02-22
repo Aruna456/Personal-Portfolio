@@ -6,8 +6,8 @@ const experience = [
     role: "R&D Intern",
     company: "Abluva Pvt Ltd",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
-    techonologies: ["GoLang", "Wireshark", "SQL Server", "Oracle"],
+      "Working as part of a research and development team, contributing to backend-related tasks, debugging issues, and understanding how data flows through real systems.",
+    techonologies: ["Go", "SQL", "Databases", "Wireshark"],
     current: true,
   },
 ];
@@ -27,16 +27,16 @@ const Experience = () => {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground ">
-            Experience that
+            Learning and contributing
             <span className="text-white font-serif font-normal">
               {" "}
-              speaks volumes
+              in real environments
             </span>
           </h2>
 
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            These are small, focused projects that I built. Each reflects the
-            kind of work I've been doing and learning along the way
+            An overview of my professional exposure, focused on learning,
+            collaboration, and contributing to real development work.{" "}
           </p>
         </div>
 
