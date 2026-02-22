@@ -30,12 +30,12 @@ const About = () => {
           {/* Left Column */}
           <div className="space-y-8">
             <div className="animate-fade-in">
-              <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase ">
+              <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in ">
                 About Me
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground **:">
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground ">
               Building reliable applications with
               <span className="text-white font-serif font-normal">
                 {" "}
